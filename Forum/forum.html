@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLab Forum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Единая Grid-сетка как в TEST1 и Profile */
+        body {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            grid-template-rows: 70px 1fr;
+            height: 100vh;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        /* =========================================
+           ИДЕНТИЧНЫЕ СТИЛИ МЕНЮ И ЛОГОТИПА
+        ========================================== */
+        
+        .logo {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000;
+            gap: 3px;
+            position: relative;
+            right: -20px;
+            z-index: 10;
+        }
+
+        .logo i {
+            font-size: 18px;
+            transform: translateY(-2px);
+            position: relative;
+            top: 3px;
+        }
+
+        .sidebar {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-right: 1px solid #eee;
+        }
+
+        .top-icons, .bottom-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .icon-btn, .icon-btn1, .icon-btn2 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            background: #fff;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .icon-btn:hover, .icon-btn1:hover, .icon-btn2:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .icon-btn i { font-size: 18px; }
+        .icon-btn1 i { font-size: 21px; }
+        .icon-btn2 i { font-size: 22px; font-weight: 900; }
+        .icon-f { font-size: 24px; font-weight: bold; font-family: serif; }
+
+        /* =========================================
+           ОБЛАСТЬ ФОРУМА
+        ========================================== */
+
+        .main-content {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3; /* Занимает всю высоту справа от меню */
+            padding: 60px 50px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .forum-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .post-card {
+            border: 2px solid #000;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #fff;
+        }
+
+        .post-user {
+            font-size: 16px;
+            font-weight: normal;
+            color: #333;
+        }
+
+        .post-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .post-text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../Main/1index1.html" class="logo"><span>P</span><i class="fa-solid fa-paint-roller"></i><span>Lab</span></a>
+
+    <nav class="sidebar">
+        <div class="top-icons">
+            <a href="../Profile/Profile.html" class="icon-btn"><i class="fa-solid fa-user"></i></a>
+            <a href="../Paint/zxcv.html" class="icon-btn2"><i class="fa-solid fa-plus"></i></a>
+            <a href="#" class="icon-btn"><i class="fas fa-globe-americas"></i></a>
+            <a href="#" class="icon-btn1"><i class="fa-solid fa-hand-holding-dollar"></i></a>
+            <a href="../Forum/Forum.html" class="icon-btn icon-f"><i class="fa-solid fa-f"></i></a>
+        </div>
+        
+        <div class="bottom-icons">
+            <a href="#" class="icon-btn"><i class="fas fa-cog"></i></a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="forum-container">
+
+            <div class="post-card">
+                <div class="post-user">Пользователь: @Krutoy</div>
+                <div class="post-title">Как рисовать на PiLab?</div>
+                <div class="post-text">Начало текста: Всем привет! Я хотел бы поделиться своим опытом и узнать, как другие используют эту платформу. Мои первые наброски...</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-user">Пользователь: user_anna</div>
+                <div class="post-title">Лучшие настройки кистей</div>
+                <div class="post-text">Начало текста: Долго мучилась с настройками, линии получались слишком рваными. Собрала для вас небольшую подборку параметров...</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-user">Пользователь: @Krutoy</div>
+                <div class="post-title">Оценка моей новой работы</div>
+                <div class="post-text">Начало текста: Закончил свой новый проект, на который ушло больше 20 часов. Пытался работать с новой палитрой и освещением...</div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
