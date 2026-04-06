@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Применяем Grid как в TEST1 */
+body {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 70px 1fr;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* =========================================
+   ИДЕНТИЧНЫЕ СТИЛИ МЕНЮ И ЛОГОТИПА ИЗ TEST1
+========================================== */
+
+.logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    gap: 3px;
+    position: relative;
+    right: -20px;
+    z-index: 10;
+}
+
+.logo i {
+    font-size: 18px;
+    transform: translateY(-2px);
+    position: relative;
+    top: 3px;
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-right: 1px solid #eee;
+}
+
+.top-icons, .bottom-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon-btn, .icon-btn1, .icon-btn2 {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.icon-btn:hover, .icon-btn1:hover, .icon-btn2:hover {
+    background: #000;
+    color: #fff;
+}
+
+.icon-btn i { font-size: 18px; }
+.icon-btn1 i { font-size: 21px; }
+.icon-btn2 i { font-size: 22px; font-weight: 900; }
+.icon-f { font-size: 24px; font-weight: bold; font-family: serif; }
+
+/* =========================================
+   СТИЛИ САМОГО ПРОФИЛЯ (БЕЗ ПОЛОМОК)
+========================================== */
+
+.content {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3; /* Контент занимает всю высоту справа от меню */
+    overflow-y: auto;
+    padding: 60px 50px;
+    background-color: #fff;
+}
+
+.profile-info-row {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.avatar-placeholder {
+    width: 140px;
+    height: 140px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.status-dot {
+    width: 35px;
+    height: 35px;
+    background: #ccc;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.author-bio h2 {
+    margin-bottom: 10px;
+}
+
+.social-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.btn-pill {
+    padding: 10px 30px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-pill:hover {
+    background: #000;
+    color: #fff;
+}
+
+.works-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.empty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.work-box {
+    aspect-ratio: 16/10;
+    border: 2px solid #000;
+    border-radius: 12px;
+    background-color: #fff;
+}
