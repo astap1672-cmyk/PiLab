@@ -41,10 +41,3 @@ document.getElementById("saveBtn").addEventListener("click", () => {
 });
 
 
-document.getElementById("undo").addEventListener("click", () => {
-    alert("Ошибка (я пидор и не доделал эту хуйню)");
-});
-
-document.getElementById("redo").addEventListener("click", () => {
-    alert("Ошибка (я пидор и не доделал эту хуйню)");
-});

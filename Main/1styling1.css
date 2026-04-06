@@ -1,4 +1,3 @@
-/* Базовые сбросы */
 * {
     margin: 0;
     padding: 0;
@@ -6,83 +5,64 @@
     font-family: Arial, sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
+a { text-decoration: none; color: black; }
 
 body {
     display: grid;
-    grid-template-columns: 80px 1fr; /* Левая колонка для лого и меню, правая для поиска и контента */
-    grid-template-rows: 70px 1fr; /* Верхняя строка для хедера, нижняя для контента */
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 70px 1fr;
     height: 100vh;
-    overflow: hidden; /* Скрываем скролл у body, он будет у контента */
+    overflow: hidden;
     background-color: #ffffff;
-    color: #000000;
 }
 
 /* --- Логотип --- */
 .logo {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            font-weight: 700;
-            text-decoration: none;
-            color: #000;
-            gap: 3px;
-            position: relative;
-            right: -20px;
-            z-index: 10;
-        }
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    gap: 3px;
+    z-index: 10;
+    position: relative;
+    right: -20px;
+}
 
-        .logo i {
-            font-size: 18px;
-            transform: translateY(-2px);
-            position: relative;
-            
-        }
+.logo i { font-size: 18px; transform: translateY(-2px); position: relative; top: -2px; }
 
-/* --- Поисковая строка --- */
+/* --- Поиск и Авторизация --- */
 .search-area {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 40px;
+    border-bottom: 1px solid #eee;
 }
 
 .search-bar {
     display: flex;
     align-items: center;
-    float: right;
-    width: 100%;
     height: 40px;
     border: 2px solid #000;
     border-radius: 20px;
     padding: 0 15px;
-    background-color: #fff;
-    position: relative;
-    left: 10px;
+    flex: 1;
+    margin: 0 40px;
+    max-width: 800px;
 }
 
-.search-bar i {
-    color: #000;
-    font-size: 16px;
-    margin-right: 10px;
-}
+.search-bar input { border: none; outline: none; width: 100%; margin-left: 10px; font-size: 16px; }
 
-.search-bar input {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 16px;
-}
+.auth-buttons { display: flex; gap: 12px; font-size: 14px; padding: 8px 18px; position: relative; right: -28px;}
+.auth-btn { padding: 8px 18px; border: 2px solid #000; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 14px; padding: 8px 18px;}
+.login-btn { background: #fff; }
+.signup-btn { background: #000; color: #fff; }
 
-/* --- Боковое меню (Иконки) --- */
+/* --- Сайдбар и Иконки --- */
 .sidebar {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -91,175 +71,70 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
-    border-right: 1px solid #eaeaea; /* Легкая граница для отделения */
+    border-right: 1px solid #eee;
 }
 
-.top-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+.top-icons, .bottom-icons { display: flex; flex-direction: column; gap: 20px; }
 
-.icon-btn, .icon-btn1, .icon-btn2, .icon-btn5{
-            width: 50px;
-            height: 50px;
-            border: 2px solid #000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #000;
-            background: #fff;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-
-        .icon-btn:hover, .icon-btn1:hover, .icon-btn2:hover, .icon-btn5:hover {
-            background: #000;
-            color: #fff;
-        }
-
-        .icon-btn i { font-size: 18px; }
-        .icon-btn1 i { font-size: 21px; }
-        .icon-btn2 i { font-size: 22px; font-weight: 900; }
-        .icon-f { font-size: 24px; font-weight: bold; font-family: serif; }
-
-/* Иконка Форума (буква F) */
-.icon-f {
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif; /* Чтобы F выглядела классически */
-    font-size: 20px;
-}
-
-/* --- Основной контент (Pinterest стиль) --- */
-.content-area {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    padding: 20px;
-    overflow-y: auto; /* Добавляем скролл именно сюда */
-}
-
-.masonry {
-    column-count: 4; /* Количество колонок */
-    column-gap: 20px;
-}
-
-/* Адаптивность для меньших экранов */
-@media (max-width: 1200px) { .masonry { column-count: 3; } }
-@media (max-width: 800px) { .masonry { column-count: 2; } }
-@media (max-width: 500px) { .masonry { column-count: 1; } }
-
-.item {
-    background-color: #f9f9f9;
+.icon-btn, .icon-btn1, .icon-btn2, .icon-btn5 {
+    width: 50px;
+    height: 50px;
     border: 2px solid #000;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    break-inside: avoid; /* Запрещаем разрыв блока между колонками */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
-    transition: transform 0.2s;
-}
-
-.item:hover {
-    transform: scale(1.02);
+    transition: 0.2s;
     cursor: pointer;
+    background: #fff;
+    color: #000;
 }
 
-/* === Стили модального окна настроек === */
+.icon-btn:hover, .icon-btn1:hover, .icon-btn2:hover, .icon-btn5:hover { background: #000; color: #fff; }
+
+/* РАЗМЕРЫ ИКОНОК КАК ТЫ ПРОСИЛ */
+.icon-btn i, .icon-btn5 i { font-size: 18px; }
+.icon-btn1 i { font-size: 21px; }
+.icon-btn2 i { font-size: 22px; font-weight: 900; }
+.icon-f { font-size: 24px; font-weight: bold; font-family: 'Times New Roman', Times, serif; }
+
+/* --- Сетка --- */
+.content-area { grid-column: 2 / 3; grid-row: 2 / 3; padding: 30px; overflow-y: auto; }
+.masonry { column-count: 4; column-gap: 20px; }
+.item {
+    background: #fff; border: 2px solid #000; border-radius: 10px; margin-bottom: 20px;
+    break-inside: avoid; display: flex; align-items: center; justify-content: center;
+    transition: 0.3s; cursor: pointer; font-weight: bold;
+}
+.item:hover { transform: scale(1.03); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+/* --- ОБНОВЛЕННОЕ ОКНО НАСТРОЕК (БОЛЬШОЕ) --- */
 dialog {
     border: none;
-    border-radius: 24px; /* Красивые скругленные углы */
+    border-radius: 24px;
     padding: 40px;
-    width: 80vw; /* 80% от ширины экрана */
+    width: 80vw;
     max-width: 900px;
-    height: 75vh; /* 75% от высоты экрана */
+    height: 75vh;
     max-height: 700px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    background-color: #ffffff;
-    color: #000000;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    margin: auto;
 }
 
-/* Когда диалог открыт, делаем его flex-контейнером */
-dialog[open] {
-    display: flex;
-    flex-direction: column;
-    animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+dialog::backdrop { background: rgba(0,0,0,0.2); backdrop-filter: blur(8px); }
 
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px); /* Красивое размытие заднего фона */
-}
-
-/* Шапка окна */
 .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #eaeaea;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px;
 }
+.modal-header h2 { font-size: 32px; font-weight: 700; }
 
-.modal-header h2 {
-    font-size: 32px;
-    font-weight: 700;
-}
+#closeSettings { background: none; border: none; font-size: 28px; cursor: pointer; transition: 0.2s; }
+#closeSettings:hover { transform: scale(1.2) rotate(90deg); }
 
-#closeSettings {
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #000;
-    transition: transform 0.2s;
-}
-
-#closeSettings:hover {
-    transform: scale(1.2) rotate(90deg); /* Прикольная анимация при наведении */
-}
-
-/* Содержимое настроек */
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-.setting-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Элементы выбора (без фона, как ты просил) */
+.modal-body { display: flex; flex-direction: column; gap: 35px; }
+.setting-item { display: flex; justify-content: space-between; align-items: center; font-size: 20px; font-weight: bold; }
 .setting-item select {
-    font-size: 18px;
-    font-weight: normal;
-    padding: 5px 10px;
-    border: none;
-    border-bottom: 2px solid #000; /* Только нижняя черта для стиля */
-    background: transparent; /* Убираем фон */
-    outline: none;
-    cursor: pointer;
-    color: #000;
-    text-align: right;
-    min-width: 150px;
-}
-
-/* Анимация появления */
-@keyframes scaleIn {
-    from { 
-        opacity: 0; 
-        transform: scale(0.95) translateY(20px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: scale(1) translateY(0); 
-    }
+    font-size: 18px; padding: 5px; border: none; border-bottom: 2px solid #000;
+    background: transparent; cursor: pointer; text-align: right; min-width: 150px;
 }

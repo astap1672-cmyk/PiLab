@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PiLab</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    
     <link rel="stylesheet" href="1styling1.css"> 
 </head>
 <body>
 
     <div class="logo">
-  <a href="1index1.html"><span>P</span></a>
-  <a href="1index1.html"><i class="fa-solid fa-paint-roller"></i></a>
-  <a href="1index1.html"><span>Lab</span></a>
-</div>
+        <a href="1index1.html"><span>P</span></a>
+        <a href="1index1.html"><i class="fa-solid fa-paint-roller"></i></a>
+        <a href="1index1.html"><span>Lab</span></a>
+    </div>
 
     <div class="search-area">
         <div class="search-bar">
             <i class="fas fa-search"></i>
             <input type="text" placeholder="Поиск...">
         </div>
+        <div class="auth-buttons">
+            <a href="#" class="auth-btn login-btn">LOGIN</a>
+            <a href="#" class="auth-btn signup-btn">SIGN UP</a>
+        </div>
     </div>
 
     <div class="sidebar">
         <div class="top-icons">
-            <a class="icon-btn" alt="" href="../Profile/profile.html" title="Профиль"><i class="fa-solid fa-user"></i></a> <a class="icon-btn1" alt="" href="../Paint/zxcv.html" title="Добавить"><i class="fas fa-plus"></i></a> <a class="icon-btn" alt="" href="" title="ХЗ"><i class="fas fa-globe-americas"></i></a> <a class="icon-btn2" alt="" href="" title="Помощь нам"><i class="fa-solid fa-hand-holding-dollar"></i></a> <a class="icon-btn icon-f" alt="" href="../Forum/Forum.html" title="Форум"><i class="fa-solid fa-f"></i></a> </div>
+            <a class="icon-btn" href="../Profile/profile.html" title="Профиль"><i class="fa-solid fa-user"></i></a> 
+            <a class="icon-btn1" href="../Paint/zxcv.html" title="Добавить"><i class="fas fa-plus"></i></a> 
+            <a class="icon-btn" href="#" title="Глобальное"><i class="fas fa-globe-americas"></i></a> 
+            <a class="icon-btn2" href="#" title="Помощь нам"><i class="fa-solid fa-hand-holding-dollar"></i></a> 
+            <a class="icon-btn icon-f" href="../Forum/Forum.html" title="Форум"><i class="fa-solid fa-f"></i></a> 
+        </div>
         
         <div class="bottom-icons">
             <div class="icon-btn5" title="Настройки"><i class="fas fa-cog"></i></div>
@@ -33,11 +41,9 @@
     </div>
 
     <div class="content-area" id="scroll-container">
-        <div class="masonry" id="masonry-grid">
-            </div>
+        <div class="masonry" id="masonry-grid"></div>
     </div>
 
-    <script src="1scripting1.js"></script>
     <dialog id="settingsModal">
         <div class="modal-header">
             <h2>Настройки</h2>
@@ -58,10 +64,16 @@
                 <label for="langSelect">Язык интерфейса</label>
                 <select id="langSelect">
                     <option value="ru">Русский</option>
-                    <option value="en">English</option>
+                    <option value="en">English</option>\
+                </select>
+            </div>
+
+        
                 </select>
             </div>
         </div>
     </dialog>
+
+    <script src="1scripting1.js"></script>
 </body>
 </html>
